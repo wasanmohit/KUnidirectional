@@ -21,7 +21,7 @@ steps:
 
 - task: CopyFiles@2
   inputs:
-    Contents: '*.apk'
+    Contents: '**'
     TargetFolder: '$(build.artifactstagingdirectory)'
     CleanTargetFolder: true
 
@@ -30,3 +30,5 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'android'
     publishLocation: 'Container'
+
+

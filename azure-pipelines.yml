@@ -21,7 +21,7 @@ steps:
 
 - task: CopyFiles@2
   inputs:
-    Contents: '**'
+    Contents: /Users/runner/work/1/s/app/build/outputs/apk/app-debug.apk
     TargetFolder: '$(build.artifactstagingdirectory)'
     CleanTargetFolder: true
 
@@ -31,15 +31,13 @@ steps:
     ArtifactName: 'android'
     publishLocation: 'Container'
 
-
-- task: AppCenterTest@1
+- task: AppCenterDistribute@3
   inputs:
-    appFile: '$(Build.ArtifactStagingDirectory)/'
-    artifactsDirectory: '$(Build.ArtifactStagingDirectory)/AppCenterTest'
-    frameworkOption: 'appium'
-    credentialsOption: 'serviceEndpoint'
     serverEndpoint: 'app center'
     appSlug: 'wasanmohit/sample_andorid'
-    devices: 'Google pixel 6 pro'
-    localeOption: 'en_US'
+    appFile: '/Users/runner/work/1/s/app/build/outputs/apk/'
+    releaseNotesOption: 'input'
+    releaseNotesInput: 'test'
+    destinationType: 'groups'
 
+    

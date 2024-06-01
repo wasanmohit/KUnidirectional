@@ -35,7 +35,7 @@ steps:
   inputs:
     serverEndpoint: 'app center'
     appSlug: 'wasanmohit/sample_andorid'
-    appFile: '/Users/runner/work/1/s/app/build/outputs/apk/'
+    appFile: '/Users/runner/work/1/s/app/build/outputs/apk/app-debug.apk'
     releaseNotesOption: 'input'
     releaseNotesInput: 'test'
     destinationType: 'groups'

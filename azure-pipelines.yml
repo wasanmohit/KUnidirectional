@@ -30,10 +30,16 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'android'
     publishLocation: 'Container'
-- task: AppCenterDistribute@3
+
+
+- task: AppCenterTest@1
   inputs:
+    appFile: '$(Build.ArtifactStagingDirectory)/'
+    artifactsDirectory: '$(Build.ArtifactStagingDirectory)/AppCenterTest'
+    frameworkOption: 'appium'
+    credentialsOption: 'serviceEndpoint'
     serverEndpoint: 'app center'
-    appFile: 'android/app/outputs/apk/'
-    releaseNotesOption: 'input'
-    destinationType: 'groups'
+    appSlug: 'wasanmohit/sample_andorid'
+    devices: 'Google pixel 6 pro'
+    localeOption: 'en_US'
 

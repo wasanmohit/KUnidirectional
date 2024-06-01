@@ -30,5 +30,10 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'android'
     publishLocation: 'Container'
-
+- task: AppCenterDistribute@3
+  inputs:
+    serverEndpoint: 'app center'
+    appFile: 'android/app/outputs/apk/'
+    releaseNotesOption: 'input'
+    destinationType: 'groups'
 

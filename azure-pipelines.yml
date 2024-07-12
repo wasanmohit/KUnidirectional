@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  vmImage: 'demo'
+  name: 'demo'
 
 steps:
 - task: Gradle@2
